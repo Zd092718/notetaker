@@ -26,7 +26,7 @@ notes.post('/', (req, res) => {
     }
 })
 
-notes.delete('/:id', (req, res) => {
-    const {id} = req.params;
-})
+// notes.delete('/:id', (req, res) => {
+//     const {id} = req.params;
+// })
 module.exports = notes;
