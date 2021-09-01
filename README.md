@@ -13,22 +13,23 @@
       </ul>
     </li>
     <li><a href="#testing">Testing</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
   </details>
   <br>
 
 ## About the project
-This is a Node.js application that uses the Inquirer npm to generate a Readme markdown file based off of user input. This application creates a markdown template with all of the user input included inside for a desirable README. Once applied, users will me able to move, rename, and adjust the file accordingly.
+This is a note taking site that uses server side code and storage to add and save notes inputted by the user. Using express.js, this app allows users to write notes and save them so that reloading the page doesn't remove the entered notes. All entered notes are stored in a notes.json file using this post method allowing for future reference.
 
 ### Built With
 
 * Javascript
 * Node.js
-* Inquirer.js
+* Express.js
 
 ### Testing
+
+To access the site, simply visit https://infinite-bayou-35594.herokuapp.com/ to get started with taking a saving notes.
 
 To access the code for the note taker:
 
@@ -38,19 +39,13 @@ To access the code for the note taker:
     git clone https://github.com/Zd092718/notetaker
     ```
 
-To use this project, clone the project repository and access it from your command line. Type node index.js into your command line when inside the repository. The user will then be prompted by the terminal with questions regarding their project. After the prompts are answered, a success message will appear inside the terminal and a markdown file named "UREADME.md" will appear inside of the generator project folder. From there, the markdown file will be created, movable and adjustable as needed.
 
-### Preview Gif
+### Preview Screenshot
 <br>
 
-![gif of project](./project.gif)
+![gif of project](./public/assets/images/project-screenshot.png)
 
 
-## Acknowledgements
-
-For Github Badges: https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
-<br>
-For License references and links: https://opensource.org/licenses
 ## Contact
 
 Zachary Dowd - zdowd2796@gmail.com
