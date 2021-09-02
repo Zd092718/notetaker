@@ -2,7 +2,7 @@ const notes = require('express').Router();
 const fs = require('fs');
 const { readFromFile, readAndAppend, writeToFile } = require('../helpers/fsUtil');
 const uuid = require('../helpers/uuid');
-const data = require('../db/notes.json')
+let data = require('../db/notes.json')
 
 //retreives data from notes.json
 notes.get('/', (req, res) => {
@@ -34,14 +34,11 @@ notes.delete('/:id', (req, res) => {
 
     console.log(data)
 
-    const index = data.indexOf(p => p.id === id);
-    console.log(index)
-    
-    data.splice(index, 1);
+    data = data.filter(p => p.id !== id);
 
     writeToFile('./db/notes.json', data);
 
-    res.json(index);
+    res.json(data);
 
 })
 // notes.delete('/:id', (req, res) => {
