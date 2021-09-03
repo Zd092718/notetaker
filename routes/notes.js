@@ -1,13 +1,14 @@
 const notes = require('express').Router();
 const { readFromFile, readAndAppend, writeToFile } = require('../helpers/fsUtil');
 const uuid = require('../helpers/uuid');
-let data = require('../db/notes.json')
+let data = require('../db/notes.json');
 
 //retreives data from notes.json
 notes.get('/', (req, res) => {
     console.log(`${req.method} request received for notes`);
 
-    readFromFile('./db/notes.json').then((data) => res.json(JSON.parse(data)));
+    // readFromFile('./db/notes.json').then((data) => res.json(JSON.parse(data)));
+    res.json(data);
 })
 
 //adds new note object to notes.json and posts it to the stored notes
@@ -21,7 +22,7 @@ notes.post('/', (req, res) => {
             text,
             id: uuid()
         }
-
+        data.push(newNote);
         readAndAppend(newNote, './db/notes.json');
         res.json(newNote)
     }
